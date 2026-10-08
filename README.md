@@ -15,14 +15,14 @@ Dataset **Seeds** del UCI Machine Learning Repository (descargado directamente d
 1. Carga de datos directamente desde la fuente (UCI) y partición 80/20 en train/test, con estandarización de variables (`StandardScaler`).
 2. Entrenamiento de un modelo SVM con kernel lineal.
 3. Comparación de desempeño entre kernel **lineal** y kernel **RBF**.
-4. Visualización de las fronteras de decisión de ambos kernels (usando las 2 variables más relevantes, en 2D).
+4. Visualización de las fronteras de decisión de ambos kernels (usando 2 variables, área y perímetro, para poder graficarlas en 2D).
 5. Extracción e interpretación de los pesos y sesgos del modelo lineal para cada enfrentamiento entre clases (uno-contra-uno).
 
 ## Resultados
 
-- Precisión con kernel lineal: **90.48%**
-- Precisión con kernel RBF: **90.48%**
-- Ambos kernels obtienen el mismo desempeño en este dataset, lo que sugiere que las clases son mayormente separables de forma lineal.
+- Accuracy con kernel lineal: **90.48%** (38 de 42 casos de prueba)
+- Accuracy con kernel RBF: **90.48%**
+- Ambos kernels obtienen el mismo desempeño en este dataset, lo que sugiere que las clases son mayormente separables de forma lineal. Con solo 42 casos de prueba la diferencia entre modelos es poco concluyente; una validación cruzada daría una comparación más robusta.
 
 ## Herramientas
 
@@ -35,4 +35,4 @@ pip install -r requirements.txt
 jupyter notebook clasificacion_svm_semillas.ipynb
 ```
 
-El notebook descarga el dataset automáticamente desde UCI, no requiere archivos adicionales.
+El notebook descarga el dataset automáticamente desde UCI, no requiere archivos adicionales. Funciona tanto en Google Colab como en local.
